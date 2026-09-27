@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Icon from '../ui/Icon';
+import Icon from './ui/Icon';
 
 export default function ServiceCard({ service }) {
   return (

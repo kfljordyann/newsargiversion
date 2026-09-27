@@ -1,4 +1,4 @@
-import { useVoiceInput } from '../hooks/useVoiceInput';
+import { useVoiceInput } from '../../hooks/useVoiceInput';
 
 const LABELS = {
   inactif: '🎙️ Parler pour écrire',
