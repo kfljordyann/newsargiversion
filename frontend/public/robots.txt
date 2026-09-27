@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: [À CONFIGURER — url du sitemap une fois le domaine final connu]

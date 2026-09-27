@@ -1,0 +1,130 @@
+[
+  {
+    "id": "juridique",
+    "categorie": "Services Juridiques",
+    "icone": "scale",
+    "description": "Conseil et accompagnement juridique complet pour particuliers, PME, startups, investisseurs et grandes entreprises.",
+    "ordre": 1,
+    "actif": true,
+    "prestations": [
+      { "id": "jur-societes", "nom": "Droit des Sociétés", "description": "Création d'entreprises (SARL, SA, SAS, SCS, GIE...), rédaction de statuts et pactes d'associés, formalités RCCM/IFU, restructuration, cessions, fusions et acquisitions." },
+      { "id": "jur-contrats", "nom": "Contrats & Rédactions Juridiques", "description": "Rédaction et analyse de contrats commerciaux, contrats de travail, baux commerciaux et d'habitation, contrats de partenariat et de prêt." },
+      { "id": "jur-amiable", "nom": "Résolution Amiable & Gestion de Conflits", "description": "Médiation, conciliation, arbitrage et règlement amiable des litiges commerciaux." },
+      { "id": "jur-contentieux", "nom": "Contentieux & Représentation Juridique", "description": "Représentation devant les juridictions civiles, commerciales et sociales, contentieux du travail et des contrats." },
+      { "id": "jur-social", "nom": "Droit Social & Ressources Humaines", "description": "Audit juridique et conformité sociale, règlements intérieurs, conseil en recrutement et rupture de contrat." },
+      { "id": "jur-immobilier", "nom": "Droit Immobilier", "description": "Conseil en achat, vente et location de biens, litiges locatifs et copropriétés, actes notariés, droit de la construction." },
+      { "id": "jur-bancaire", "nom": "Droit Bancaire et Financier", "description": "Conseil sur contrats de prêt, garanties et sûretés, négociation de financements, règlement des différends bancaires." },
+      { "id": "jur-affaires-fiscalite", "nom": "Droit des Affaires et Fiscalité", "description": "Optimisation juridique et fiscale des activités, conseil en investissement et montage juridique." }
+    ]
+  },
+  {
+    "id": "financier",
+    "categorie": "Services Financiers",
+    "icone": "trending-up",
+    "description": "Accompagnement financier sur-mesure pour particuliers, entreprises et investisseurs, issu d'une solide expérience bancaire.",
+    "ordre": 2,
+    "actif": true,
+    "prestations": [
+      { "id": "fin-strategie", "nom": "Stratégie Financière et Indépendance Financière", "description": "Structuration de budget, diversification des sources de revenus, sécurisation de l'avenir financier." },
+      { "id": "fin-recouvrement", "nom": "Recouvrement de Créances", "description": "Recouvrement amiable, précontentieux et judiciaire, gestion des biens saisis et immobilisés, affacturage." },
+      { "id": "fin-actifs", "nom": "Gestion d'Actifs et Portefeuille", "description": "Gestion de portefeuille et valorisation d'actifs, structuration de financements et levée de fonds." },
+      { "id": "fin-audit", "nom": "Audit et Restructuration", "description": "Audit financier, restructuration stratégique, conseil en conformité et gestion des risques." },
+      { "id": "fin-tresorerie", "nom": "Gestion de Trésorerie", "description": "Planification budgétaire efficace et pilotage de la trésorerie de l'entreprise." },
+      { "id": "fin-decryptage", "nom": "Décryptage des Codes Bancaires", "description": "Lecture des relevés bancaires, identification des frais cachés, négociation des conditions bancaires." },
+      { "id": "fin-prets", "nom": "Solutions de Prêts et Financements", "description": "Prêts aux entreprises, prêts immobiliers, crédits personnels et financements innovants pour startups." }
+    ]
+  },
+  {
+    "id": "assurances",
+    "categorie": "Assurances",
+    "icone": "shield",
+    "description": "Solutions d'assurance Vie, Épargne et IARD adaptées au contexte béninois, pour particuliers, entrepreneurs et investisseurs.",
+    "ordre": 3,
+    "actif": true,
+    "prestations": [
+      { "id": "ass-deces", "nom": "Assurance Décès", "description": "Protection financière des proches en cas de disparition de l'assuré." },
+      { "id": "ass-vie-epargne", "nom": "Assurance Vie Épargne", "description": "Constitution d'un capital sur le long terme, avec intérêts garantis ou participation aux bénéfices." },
+      { "id": "ass-retraite", "nom": "Assurance Retraite Complémentaire", "description": "Anticipez votre retraite en constituant une épargne sécurisée et rentable." },
+      { "id": "ass-education", "nom": "Assurance Éducation", "description": "Garantir la continuité des études de vos enfants, même en cas d'imprévus." },
+      { "id": "ass-obseques", "nom": "Assurance Obsèques", "description": "Anticipation des frais liés aux funérailles et accompagnement des familles." },
+      { "id": "ass-invalidite", "nom": "Assurance Invalidité et Perte Totale d'Autonomie", "description": "Soutien financier en cas d'accident ou de maladie rendant l'assuré incapable de travailler." },
+      { "id": "ass-habitation", "nom": "Assurance Habitation Multirisque", "description": "Protection des biens immobiliers et mobiliers contre incendie, vol, dégâts des eaux, catastrophes naturelles." },
+      { "id": "ass-auto", "nom": "Assurance Automobile", "description": "Responsabilité civile, tous risques, bris de glace et protection juridique automobile." },
+      { "id": "ass-rc-pro", "nom": "Assurance Responsabilité Civile Professionnelle", "description": "Protection contre les dommages causés à des tiers dans le cadre de votre activité." },
+      { "id": "ass-sante", "nom": "Assurance Santé / Maladie Complémentaire", "description": "Prise en charge des frais médicaux, hospitalisations et soins de santé non couverts." },
+      { "id": "ass-multirisque-pro", "nom": "Assurance Multirisque Professionnelle", "description": "Couverture globale des biens professionnels, stocks, matériels, responsabilité civile." },
+      { "id": "ass-industriels", "nom": "Assurance Risques Industriels", "description": "Protection des installations industrielles contre les dommages majeurs." },
+      { "id": "ass-transport", "nom": "Assurance Transport / Marchandises", "description": "Protection des biens en transit terrestre, maritime ou aérien." },
+      { "id": "ass-bris-machine", "nom": "Assurance Bris de Machine", "description": "Couverture des équipements et machines contre tout dommage accidentel." }
+    ]
+  },
+  {
+    "id": "immobilier",
+    "categorie": "Services Immobiliers",
+    "icone": "home",
+    "description": "Gestion rigoureuse et accompagnement professionnel pour tous vos projets immobiliers, de l'acquisition à la valorisation.",
+    "ordre": 4,
+    "actif": true,
+    "prestations": [
+      { "id": "imm-locative", "nom": "Gestion Locative Professionnelle", "description": "Mise en location, rédaction de baux sécurisés, suivi des loyers, relance des impayés." },
+      { "id": "imm-achat-vente", "nom": "Achat & Vente de Biens Immobiliers", "description": "Accompagnement lors d'acquisitions ou de ventes, estimation et négociation." },
+      { "id": "imm-conseil-fiscal", "nom": "Conseils Juridiques & Fiscaux en Immobilier", "description": "Conseil sur le Code Foncier béninois, respect des normes OHADA, régularisation des titres de propriété, appui auprès de l'ANDF." },
+      { "id": "imm-conflits", "nom": "Gestion des Conflits Immobiliers", "description": "Résolution amiable des litiges entre propriétaires, locataires ou acheteurs, sécurisation des transactions." },
+      { "id": "imm-opportunites", "nom": "Recherche et Conseil en Opportunités Immobilières", "description": "Identification de terrains et immeubles à fort potentiel, audit de fiabilité juridique et commerciale." },
+      { "id": "imm-promotion", "nom": "Promotion Immobilière et Montage d'Opérations Foncières", "description": "Études de faisabilité et accompagnement des projets de promotion immobilière." }
+    ]
+  },
+  {
+    "id": "informatique",
+    "categorie": "Informatique et Technologies",
+    "icone": "monitor",
+    "description": "Solutions informatiques accessibles et performantes pour particuliers, PME, grandes entreprises et collectivités.",
+    "ordre": 5,
+    "actif": true,
+    "prestations": [
+      { "id": "it-maintenance", "nom": "Maintenance & Réparation", "description": "Diagnostic, réparation et entretien préventif des équipements, assistance technique à distance et sur site." },
+      { "id": "it-cybersecurite", "nom": "Cybersécurité & Protection des Données", "description": "Antivirus, pare-feu, systèmes de sauvegarde, sécurisation des réseaux et infrastructures." },
+      { "id": "it-videosurveillance", "nom": "Vidéosurveillance et Sécurité Électronique", "description": "Installation de caméras IP, CCTV et solutions de surveillance connectées." },
+      { "id": "it-reseaux-serveurs", "nom": "Réseaux et Serveurs", "description": "Conception d'architectures réseau sécurisées, installation et administration de serveurs." },
+      { "id": "it-equipements", "nom": "Équipements Informatiques et Audiovisuels", "description": "Vente et installation d'ordinateurs, écrans, imprimantes et solutions d'affichage dynamique." },
+      { "id": "it-formations", "nom": "Formations Informatiques", "description": "Bureautique, cybersécurité, montage de réseaux et maintenance matérielle." },
+      { "id": "it-dev-sur-mesure", "nom": "Développement sur Mesure", "description": "Solutions logicielles personnalisées, applications web et mobiles, intégration de systèmes ERP." },
+      { "id": "it-transformation-num", "nom": "Transformation Numérique", "description": "Digitalisation des processus, gestion des infrastructures IT, services cloud et conseil en architecture." }
+    ]
+  },
+  {
+    "id": "intelligence-artificielle",
+    "categorie": "Intelligence Artificielle",
+    "icone": "cpu",
+    "description": "L'intelligence artificielle rendue accessible aux entrepreneurs, entreprises, étudiants, commerçants, artisans et particuliers.",
+    "ordre": 6,
+    "actif": true,
+    "prestations": [
+      { "id": "ia-chatbots", "nom": "Création de Chatbots sur-mesure", "description": "Chatbots conversationnels pour sites web, applications et réseaux sociaux, assistance client automatisée 24h/24." },
+      { "id": "ia-dev-web-mobile", "nom": "Développement de Sites Web & Applications", "description": "Sites e-commerce, institutionnels ou vitrines, applications mobiles intégrant des modules d'IA." },
+      { "id": "ia-webdesign", "nom": "Web Design, Infographie & Graphisme", "description": "Création de logos, identités visuelles et maquettes UX/UI modernes." },
+      { "id": "ia-assistants-vocaux", "nom": "Assistants Vocaux et Automatisation", "description": "Installation d'assistants vocaux personnalisés, systèmes de réponse automatique et rappel intelligent." },
+      { "id": "ia-redaction", "nom": "Rédaction assistée par l'IA", "description": "Rédaction de courriers, contrats, mémoires académiques et contenus marketing optimisés." },
+      { "id": "ia-analyse-donnees", "nom": "Analyse de Données", "description": "Exploitation des données pour générer des insights stratégiques et prédictifs." },
+      { "id": "ia-ecommerce", "nom": "E-commerce et Dropshipping", "description": "Boutiques en ligne professionnelles, intégration avec des plateformes internationales." },
+      { "id": "ia-robotique", "nom": "Robotique Physique & Virtuelle", "description": "Robotique domestique et professionnelle, automatisation via RPA, robotique éducative." },
+      { "id": "ia-formations", "nom": "Formations Pratiques en IA", "description": "Initiation à l'IA, création de chatbots, rédaction assistée, e-commerce et robotique." }
+    ]
+  },
+  {
+    "id": "services-complementaires",
+    "categorie": "Services Complémentaires",
+    "icone": "briefcase",
+    "description": "Un ensemble de services complémentaires pour répondre aux besoins variés de nos clients.",
+    "ordre": 7,
+    "actif": true,
+    "prestations": [
+      { "id": "comp-renseignement", "nom": "Renseignement Commercial", "description": "Études et renseignements commerciaux pour sécuriser vos décisions." },
+      { "id": "comp-etudes-marche", "nom": "Études de Marché", "description": "Analyses de marché pour orienter vos projets et investissements." },
+      { "id": "comp-detective", "nom": "Services de Détective Privé", "description": "Investigations et recherches confidentielles." },
+      { "id": "comp-recrutement", "nom": "Recrutement de Personnel", "description": "Recrutement, formation professionnelle et gestion des talents." },
+      { "id": "comp-community-management", "nom": "Community Management", "description": "Gestion de vos réseaux sociaux et de votre présence en ligne." },
+      { "id": "comp-marketing-digital", "nom": "Marketing Digital", "description": "Stratégies de marketing digital adaptées à votre activité." }
+    ]
+  }
+]

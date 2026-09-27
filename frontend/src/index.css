@@ -1,0 +1,327 @@
+/* ===================================================================
+   SARGI BENIN — Design tokens
+   Charte : 50% blanc (fond/lisibilité), 35% bleu (institutionnel,
+   confiance, navigation), 15% vert (accent, action, succès).
+   =================================================================== */
+:root {
+  /* Couleurs de marque (extraites du logo SARGI) */
+  --sargi-blue-900: #042f6b;
+  --sargi-blue-700: #064eb0;
+  --sargi-blue-600: #1a63c9;
+  --sargi-blue-100: #e8f0fc;
+  --sargi-blue-50: #f4f8fe;
+
+  --sargi-green-700: #059450;
+  --sargi-green-600: #07bf67;
+  --sargi-green-100: #e4f9ee;
+
+  --white: #ffffff;
+  --ink-900: #10161f;
+  --ink-700: #364152;
+  --ink-500: #6b7688;
+  --ink-200: #e2e6ec;
+  --ink-100: #f1f3f6;
+
+  --danger: #d64545;
+  --warning: #c98a1c;
+
+  /* Typographie */
+  --font-display: 'Manrope', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  /* Rythme */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-card: 0 1px 2px rgba(16, 22, 31, 0.06), 0 8px 24px -12px rgba(6, 78, 176, 0.18);
+  --max-width: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink-900);
+  background: var(--white);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--sargi-blue-900);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2rem, 4vw + 1rem, 3.2rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 2.5vw + 1rem, 2.2rem); font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 700; }
+
+p { margin: 0 0 1em; color: var(--ink-700); max-width: 68ch; }
+
+a { color: var(--sargi-blue-700); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; display: block; }
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--sargi-green-600);
+  outline-offset: 2px;
+}
+
+/* --- Layout --- */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.app-shell > main { flex: 1; }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: clamp(2.5rem, 5vw, 5rem) 0;
+}
+
+.section--tint {
+  background: var(--sargi-blue-50);
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid--cards {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.stack { display: flex; flex-direction: column; gap: 12px; }
+.row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.row--between { justify-content: space-between; }
+
+/* --- Boutons (bleu = principal / institutionnel, vert = action secondaire/succès) --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  min-height: 44px;
+  text-decoration: none;
+}
+.btn:hover { text-decoration: none; }
+.btn:active { transform: translateY(1px); }
+
+.btn--primary {
+  background: var(--sargi-blue-700);
+  color: var(--white);
+}
+.btn--primary:hover { background: var(--sargi-blue-900); }
+
+.btn--accent {
+  background: var(--sargi-green-600);
+  color: var(--white);
+}
+.btn--accent:hover { background: var(--sargi-green-700); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--sargi-blue-700);
+  border-color: var(--sargi-blue-100);
+}
+.btn--ghost:hover { background: var(--sargi-blue-50); }
+
+.btn--block { width: 100%; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* --- Cartes --- */
+.card {
+  background: var(--white);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.badge--blue { background: var(--sargi-blue-100); color: var(--sargi-blue-900); }
+.badge--green { background: var(--sargi-green-100); color: var(--sargi-green-700); }
+.badge--neutral { background: var(--ink-100); color: var(--ink-700); }
+
+/* --- Formulaires --- */
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.field label { font-weight: 600; font-size: 0.9rem; color: var(--ink-900); }
+.field .hint { font-size: 0.8rem; color: var(--ink-500); }
+
+.input, .textarea, .select {
+  border: 1.5px solid var(--ink-200);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  min-height: 44px;
+  background: var(--white);
+  color: var(--ink-900);
+}
+.input:focus, .textarea:focus, .select:focus {
+  border-color: var(--sargi-blue-600);
+}
+.textarea { resize: vertical; min-height: 120px; }
+
+.field--error .input,
+.field--error .textarea { border-color: var(--danger); }
+.error-text { color: var(--danger); font-size: 0.85rem; }
+
+.input-with-mic { position: relative; }
+.input-with-mic .textarea, .input-with-mic .input { padding-right: 48px; }
+
+/* --- États --- */
+.state-panel {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--ink-500);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--ink-100) 25%, var(--ink-200) 37%, var(--ink-100) 63%);
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+  border-radius: var(--radius-sm);
+}
+@keyframes skeleton-loading {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+/* --- Toasts --- */
+.toast-stack {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  pointer-events: none;
+}
+.toast {
+  pointer-events: auto;
+  max-width: 360px;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-weight: 600;
+  box-shadow: var(--shadow-card);
+  animation: toast-in 0.2s ease;
+}
+.toast--success { background: var(--sargi-green-700); }
+.toast--error { background: var(--danger); }
+.toast--info { background: var(--sargi-blue-700); }
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .toast-stack { align-items: stretch; }
+}
+
+/* --- Cartes de service --- */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.service-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: var(--sargi-blue-100);
+  color: var(--sargi-blue-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.service-card__count {
+  font-size: 0.85rem;
+  color: var(--ink-500);
+  margin-bottom: 12px;
+}
+
+/* --- Statut des demandes --- */
+.status-pill { padding: 4px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; }
+.status-pill--nouvelle { background: var(--sargi-blue-100); color: var(--sargi-blue-900); }
+.status-pill--cours { background: #fff4dd; color: var(--warning); }
+.status-pill--attente { background: var(--ink-100); color: var(--ink-700); }
+.status-pill--traitee { background: var(--sargi-green-100); color: var(--sargi-green-700); }
+.status-pill--cloturee { background: var(--ink-200); color: var(--ink-500); }
+
+/* --- Accueil --- */
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.hero__stats {
+  display: grid;
+  gap: 20px;
+}
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.hero__stat strong {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--sargi-blue-700);
+}
+.hero__stat span { color: var(--ink-500); font-weight: 600; }
+
+.hero__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 860px) {
+  .hero__grid { grid-template-columns: 1fr; }
+}
