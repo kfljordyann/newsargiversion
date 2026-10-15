@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
+    "migrate": "node src/migrations/migrate.js",
     "seed": "node src/seed/run.js"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
+    "pg": "^8.13.1",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

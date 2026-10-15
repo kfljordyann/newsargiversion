@@ -2,11 +2,11 @@ const serviceRepository = require('../repositories/serviceRepository');
 const asyncHandler = require('../utils/asyncHandler');
 
 const listServices = asyncHandler(async (req, res) => {
-  res.json({ services: serviceRepository.findAll() });
+  res.json({ services: await serviceRepository.findAll() });
 });
 
 const getService = asyncHandler(async (req, res) => {
-  const service = serviceRepository.findById(req.params.id);
+  const service = await serviceRepository.findById(req.params.id);
   if (!service) {
     return res.status(404).json({ message: 'Service introuvable.' });
   }
@@ -18,7 +18,7 @@ const getService = asyncHandler(async (req, res) => {
  * sans toucher au code (nom, description, icône, disponibilité, ordre...).
  */
 const updateService = asyncHandler(async (req, res) => {
-  const service = serviceRepository.update(req.params.id, req.body);
+  const service = await serviceRepository.update(req.params.id, req.body);
   if (!service) {
     return res.status(404).json({ message: 'Service introuvable.' });
   }

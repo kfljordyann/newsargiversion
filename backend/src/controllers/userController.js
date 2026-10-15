@@ -8,13 +8,14 @@ function toPublicUser(user) {
 
 const updateProfile = asyncHandler(async (req, res) => {
   const { nom, prenom, telephone, typeClient } = req.body;
-  const user = userRepository.update(req.user.id, { nom, prenom, telephone, typeClient });
+  const user = await userRepository.update(req.user.id, { nom, prenom, telephone, typeClient });
   res.json({ user: toPublicUser(user) });
 });
 
 /** Réservé à l'administration : liste des comptes clients. */
 const listUsers = asyncHandler(async (req, res) => {
-  res.json({ users: userRepository.findAll().map(toPublicUser) });
+  const users = await userRepository.findAll();
+  res.json({ users: users.map(toPublicUser) });
 });
 
 module.exports = { updateProfile, listUsers };

@@ -11,13 +11,13 @@ function toPublicUser(user) {
 const register = asyncHandler(async (req, res) => {
   const { nom, prenom, email, telephone, motDePasse, typeClient } = req.body;
 
-  const existing = userRepository.findByEmailOrPhone(email);
+  const existing = await userRepository.findByEmailOrPhone(email);
   if (existing) {
     return res.status(409).json({ message: 'Un compte existe déjà avec cet email.' });
   }
 
   const motDePasseHash = await bcrypt.hash(motDePasse, 10);
-  const user = userRepository.create({
+  const user = await userRepository.create({
     nom,
     prenom,
     email,
@@ -33,7 +33,7 @@ const register = asyncHandler(async (req, res) => {
 const login = asyncHandler(async (req, res) => {
   const { identifiant, motDePasse } = req.body;
 
-  const user = userRepository.findByEmailOrPhone(identifiant);
+  const user = await userRepository.findByEmailOrPhone(identifiant);
   if (!user) {
     return res.status(401).json({ message: 'Identifiants incorrects.' });
   }

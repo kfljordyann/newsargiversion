@@ -8,7 +8,7 @@ const asyncHandler = require('../utils/asyncHandler');
  */
 const sendContactMessage = asyncHandler(async (req, res) => {
   const { nom, email, telephone, serviceId, message } = req.body;
-  const record = messageRepository.createFromContactForm({ nom, email, telephone, serviceId, message });
+  const record = await messageRepository.createFromContactForm({ nom, email, telephone, serviceId, message });
   res.status(201).json({
     message: 'Votre message a bien été envoyé. Notre équipe vous recontactera rapidement.',
     contact: record,
@@ -17,16 +17,16 @@ const sendContactMessage = asyncHandler(async (req, res) => {
 
 const sendClientMessage = asyncHandler(async (req, res) => {
   const { message } = req.body;
-  const record = messageRepository.createFromClient({ userId: req.user.id, message });
+  const record = await messageRepository.createFromClient({ userId: req.user.id, message });
   res.status(201).json({ contact: record });
 });
 
 const listMyMessages = asyncHandler(async (req, res) => {
-  res.json({ messages: messageRepository.findByUser(req.user.id) });
+  res.json({ messages: await messageRepository.findByUser(req.user.id) });
 });
 
 const listAllMessages = asyncHandler(async (req, res) => {
-  res.json({ messages: messageRepository.findAll() });
+  res.json({ messages: await messageRepository.findAll() });
 });
 
 module.exports = { sendContactMessage, sendClientMessage, listMyMessages, listAllMessages };

@@ -5,7 +5,7 @@ const userRepository = require('../repositories/userRepository');
  * Vérifie la présence et la validité du token JWT (header Authorization:
  * Bearer <token>). Attache l'utilisateur authentifié à req.user.
  */
-function requireAuth(req, res, next) {
+async function requireAuth(req, res, next) {
   const header = req.headers.authorization || '';
   const token = header.startsWith('Bearer ') ? header.slice(7) : null;
 
@@ -15,7 +15,7 @@ function requireAuth(req, res, next) {
 
   try {
     const decoded = verifyToken(token);
-    const user = userRepository.findById(decoded.sub);
+    const user = await userRepository.findById(decoded.sub);
     if (!user) {
       return res.status(401).json({ message: 'Session invalide.' });
     }

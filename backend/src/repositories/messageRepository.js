@@ -1,52 +1,53 @@
-const { v4: uuid } = require('uuid');
-const store = require('./jsonStore');
+const { query } = require('../config/db');
 
-const COLLECTION = 'messages';
-
-function findAll() {
-  return store.readAll(COLLECTION);
+function mapRow(row) {
+  if (!row) return null;
+  return {
+    id: row.id,
+    userId: row.user_id,
+    nom: row.nom,
+    email: row.email,
+    telephone: row.telephone,
+    serviceId: row.service_id,
+    message: row.message,
+    lu: row.lu,
+    dateEnvoi: row.date_envoi,
+  };
 }
 
-function findByUser(userId) {
-  return findAll()
-    .filter((m) => m.userId === userId)
-    .sort((a, b) => new Date(a.dateEnvoi) - new Date(b.dateEnvoi));
+async function findAll() {
+  const { rows } = await query('SELECT * FROM messages ORDER BY date_envoi ASC');
+  return rows.map(mapRow);
+}
+
+async function findByUser(userId) {
+  const { rows } = await query(
+    'SELECT * FROM messages WHERE user_id = $1 ORDER BY date_envoi ASC',
+    [userId]
+  );
+  return rows.map(mapRow);
 }
 
 /**
  * Messages envoyés par un visiteur non connecté depuis le formulaire de
  * contact (pas de compte requis pour contacter SARGI).
  */
-function createFromContactForm({ nom, email, telephone, serviceId, message }) {
-  const messages = findAll();
-  const record = {
-    id: uuid(),
-    userId: null,
-    nom,
-    email,
-    telephone: telephone || '',
-    serviceId: serviceId || null,
-    message,
-    lu: false,
-    dateEnvoi: new Date().toISOString(),
-  };
-  messages.push(record);
-  store.writeAll(COLLECTION, messages);
-  return record;
+async function createFromContactForm({ nom, email, telephone, serviceId, message }) {
+  const { rows } = await query(
+    `INSERT INTO messages (user_id, nom, email, telephone, service_id, message)
+     VALUES (NULL, $1, $2, $3, $4, $5)
+     RETURNING *`,
+    [nom, email, telephone || '', serviceId || null, message]
+  );
+  return mapRow(rows[0]);
 }
 
-function createFromClient({ userId, message }) {
-  const messages = findAll();
-  const record = {
-    id: uuid(),
-    userId,
-    message,
-    lu: false,
-    dateEnvoi: new Date().toISOString(),
-  };
-  messages.push(record);
-  store.writeAll(COLLECTION, messages);
-  return record;
+async function createFromClient({ userId, message }) {
+  const { rows } = await query(
+    `INSERT INTO messages (user_id, message) VALUES ($1, $2) RETURNING *`,
+    [userId, message]
+  );
+  return mapRow(rows[0]);
 }
 
 module.exports = { findAll, findByUser, createFromContactForm, createFromClient };
